@@ -4,7 +4,7 @@ MovieClip animation switcher for starling
 
 <pre>
 // initialize
-var jump:MovieClip = new MovieCom(fps);
+var jump:MovieCom = new MovieCom(fps);
 addChild(jump);
 
 // add movieclip animation
