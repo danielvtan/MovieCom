@@ -1,6 +1,8 @@
 
+<h1> MovieCom </h1>
 MovieClip animation switcher for starling
 
+<pre>
 // initialize
 var jump:MovieClip = new MovieCom(fps);
 addChild(jump);
@@ -11,3 +13,4 @@ jump.addClip(jumpDownTexture, "jumpDown", true);
 
 // play
 jump.play("jumpUp");
+</pre>
