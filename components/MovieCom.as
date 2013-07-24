@@ -11,7 +11,7 @@ package components
 	 * 	MovieClip animation switcher for starling
 	 * 	(start code)
 	 * 	// initialize
-	 * 	var jump:MovieClip = new MovieCom(fps);	
+	 * 	var jump:MovieCom = new MovieCom(fps);	
 	 *  addChild(jump);
 	 * 
 	 * 	// add movieclip animation
