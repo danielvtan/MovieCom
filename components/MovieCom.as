@@ -15,11 +15,31 @@ package components
 	 *  addChild(jump);
 	 * 
 	 * 	// add movieclip animation
-	 * 	jump.addClip(jumpUpTexture, "jumpUp", false);
-	 * 	jump.addClip(jumpDownTexture, "jumpDown", true);
+	 * 	jump.addClip(jumpUpVectorTexture, "jumpUp", false);
+	 * 	jump.addClip(jumpDownVectorTexture, "jumpDown", true);
 	 * 
 	 * 	// play
 	 * 	jump.play("jumpUp");
+	 * 
+	 *  // returns the current movieclip and get the name
+	 *  jump.getCurrentClip().name
+	 * 
+	 *  // returns the clip by name
+	 *  jump.getClip("jumpUp");
+	 * 
+	 *  // shows the clip
+	 *  jump.setClip("jumpDown");
+	 * 
+	 *  // select the clip by name then plays it
+	 *  jump.gotoAndPlay("jumpUp", 10);
+	 * 
+	 *  // select the clop by name the stops it
+	 *  jump.gotoAndStop("jumpDown", 5);
+	 * 
+	 *  // dispose children after use
+	 *  jump.cleanUp();
+	 * 	removeChild(jump);
+	 * 	jump = null;
 	 * 	(end)
 	 */
 	public class MovieCom extends Sprite
@@ -106,7 +126,7 @@ package components
 			hideMc();
 
 			currentMc = getClip(name);
-			goto(1).play();
+			gotoFrame(1).play();
 			Starling.juggler.add(currentMc);
 			
 			return currentMc;
@@ -131,10 +151,14 @@ package components
 		 * Parameters:
 		 * name - name of the clip
 		 * 
+		 * Returns:
+		 * MovieClip
 		 */
-		public function setClip(name:String):void {
+		public function setClip(name:String):MovieClip {
 			hideMc();
 			currentMc = getClip(name);
+			currentMc.visible = true;
+			return currentMc;
 		}
 		/**
 		 * Function: gotoAndPlay
@@ -150,7 +174,7 @@ package components
 		 */
 		public function gotoAndPlay(name:String, frame:int = 1):MovieClip {
 			setClip(name);
-			goto(frame).play();
+			gotoFrame(frame).play();
 			return currentMc;
 		}
 		/**
@@ -167,11 +191,10 @@ package components
 		 */
 		public function gotoAndStop(name:String, frame:int = 1):MovieClip {
 			setClip(name);
-			goto(frame).pause();
+			gotoFrame(frame).pause();
 			return currentMc;
 		}
-		private function goto(frameNum:int):MovieClip {
-			currentMc.visible = true;
+		private function gotoFrame(frameNum:int):MovieClip {
 			currentMc.currentFrame = frameNum;
 			return currentMc;
 		}
