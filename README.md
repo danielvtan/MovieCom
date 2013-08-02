@@ -2,7 +2,7 @@
 <h1> MovieCom </h1>
 MovieClip animation switcher for starling
 
-<h2>How to user</h2>
+<h2>How to use</h2>
 <pre>
 // initialize
 var jump:MovieCom = new MovieCom(fps);
