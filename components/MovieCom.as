@@ -33,7 +33,7 @@ package components
 	 *  // select the clip by name then plays it
 	 *  jump.gotoAndPlay("jumpUp", 10);
 	 * 
-	 *  // select the clop by name the stops it
+	 *  // select the clip by name then stops it
 	 *  jump.gotoAndStop("jumpDown", 5);
 	 * 
 	 *  // dispose children after use
