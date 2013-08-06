@@ -1,9 +1,9 @@
 
-<h1> MovieCom </h1>
+#MovieCom
 MovieClip animation switcher for starling
 
-<h2>How to use</h2>
-<pre>
+##How to use
+```actionscript
 // initialize
 var jump:MovieCom = new MovieCom(fps);
 addChild(jump);
@@ -34,4 +34,4 @@ jump.gotoAndStop("jumpDown", 5);
 jump.cleanUp();
 removeChild(jump);
 jump = null;
-</pre>
+```
